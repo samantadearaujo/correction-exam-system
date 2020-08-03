@@ -7,7 +7,7 @@ defmodule ExamsWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_exams_key",
-    signing_salt: "cXY3qBYF"
+    signing_salt: "VcGWLyyt"
   ]
 
   socket "/socket", ExamsWeb.UserSocket,
@@ -29,6 +29,8 @@ defmodule ExamsWeb.Endpoint do
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
+    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
+    plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :exams
   end
