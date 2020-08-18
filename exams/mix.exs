@@ -49,7 +49,8 @@ defmodule Exams.MixProject do
       {:absinthe_phoenix, "~> 2.0"},
       {:absinthe_plug, "~> 1.5"},
       {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
-      {:guardian, "~> 2.1"}
+      {:guardian, "~> 2.1"},
+      {:argon2_elixir, "~> 2.3"}
     ]
   end
 
