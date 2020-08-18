@@ -1,8 +1,8 @@
 defmodule ExamsWeb.UserControllerTest do
   use ExamsWeb.ConnCase
 
-  alias Exams.Acounts
-  alias Exams.Acounts.User
+  alias Exams.Accounts
+  alias Exams.Accounts.User
 
   @create_attrs %{
     name: "some name",
@@ -19,7 +19,7 @@ defmodule ExamsWeb.UserControllerTest do
   @invalid_attrs %{name: nil, password: nil, profile: nil, username: nil}
 
   def fixture(:user) do
-    {:ok, user} = Acounts.create_user(@create_attrs)
+    {:ok, user} = Accounts.create_user(@create_attrs)
     user
   end
 

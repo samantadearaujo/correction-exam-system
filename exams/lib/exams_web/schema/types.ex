@@ -2,7 +2,7 @@ defmodule ExamsWeb.Schema.Types do
     use Absinthe.Schema.Notation
     use Absinthe.Ecto, repo: Exams.Repo
 
-    object :acounts_user do
+    object :Accounts_user do
         field :id, :id
         field :name, :string
         field :password, :string

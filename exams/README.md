@@ -66,7 +66,7 @@ Request API´s:
 
 📦test
  ┣ 📂exams
- ┃ ┣ 📜acounts_test.exs
+ ┃ ┣ 📜Accounts_test.exs
  ┃ ┣ 📜classes_test.exs
  ┃ ┣ 📜exams_tests_test.exs
  ┃ ┣ 📜students_test.exs
@@ -98,7 +98,7 @@ Request API´s:
 
 ## Namespaces 
 
-Acounts - There are the profiles and users of the systems.
+Accounts - There are the profiles and users of the systems.
 Students - It is separated to qualify the type of common user of the system.
 Templates - Everyone is organized regarding exams.
 Classes - is the group of students in the same class.

@@ -1,5 +1,5 @@
 alias Exams.Repo
-alias Exams.Acounts.UserProfile
+alias Exams.Accounts.UserProfile
 
 Repo.insert! %UserProfile{
     name: "Administrator",
