@@ -1,4 +1,4 @@
-defmodule Exams.Acounts.UserProfile do
+defmodule Exams.Accounts.UserProfile do
   use Ecto.Schema
   import Ecto.Changeset
 

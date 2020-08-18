@@ -1,5 +1,5 @@
-defmodule Exams.Acounts.UserResolver do
-    alias Exams.{Acounts.User, Repo}
+defmodule Exams.Accounts.UserResolver do
+    alias Exams.{Accounts.User, Repo}
 
     def all(_args, _info) do
         {:ok,  Repo.all(User)}

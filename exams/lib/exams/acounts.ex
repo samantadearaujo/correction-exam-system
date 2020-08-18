@@ -1,12 +1,12 @@
-defmodule Exams.Acounts do
+defmodule Exams.Accounts do
   @moduledoc """
-  The Acounts context.
+  The Accounts context.
   """
 
   import Ecto.Query, warn: false
   alias Exams.Repo
 
-  alias Exams.Acounts.UserProfile
+  alias Exams.Accounts.UserProfile
 
   @doc """
   Returns the list of usersprofiles.
@@ -102,7 +102,7 @@ defmodule Exams.Acounts do
     UserProfile.changeset(user_profile, attrs)
   end
 
-  alias Exams.Acounts.User
+  alias Exams.Accounts.User
 
   @doc """
   Returns the list of users.

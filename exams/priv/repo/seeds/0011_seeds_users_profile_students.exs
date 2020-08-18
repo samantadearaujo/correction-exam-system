@@ -1,5 +1,5 @@
 alias Exams.Repo
-alias alias Exams.Acounts.User
+alias alias Exams.Accounts.User
 
 Repo.insert! %User{
   username: "2020501.6",

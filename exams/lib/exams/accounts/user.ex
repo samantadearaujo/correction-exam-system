@@ -1,4 +1,4 @@
-defmodule Exams.Acounts.User do
+defmodule Exams.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -7,7 +7,7 @@ defmodule Exams.Acounts.User do
     field :password, :string
     field :profile, :integer
     field :username, :string
-    #has_one :profile, Exams.Acounts.UserProfile
+    #has_one :profile, Exams.Accounts.UserProfile
 
     timestamps()
   end
