@@ -10,7 +10,7 @@ defmodule Exams.Repo.Migrations.CreateUsers do
     create table(:users) do
       add :name, :string
       add :username, :string
-      add :password, :string
+      add :password_hash, :string
       #add :profile_id, references(:usersprofiles)
       add :profile, :integer
 
