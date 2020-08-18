@@ -28,8 +28,8 @@ Request API´s:
 | `GET` | Return all info | api/templates/ |
 | `GET` | Return all infoReturns information from a record | api/templates/:id |
 | `POST` | Used to create a new record.| api/templates/:id |
-| `PUT` | Used to change a registry data.| api/agents/:id |
-`DELETE` | Used to remove a record.| api/agents/:id |
+| `PUT` | Used to change a registry data.| api/templates/:id |
+`DELETE` | Used to remove a record.| api/templates/:id |
 |---| EXAMS QUESTIONS |---|
 | `GET` | Return all info | api/questions/ |
 | `GET` | Return all infoReturns information from a record | api/questions/:id |
@@ -64,12 +64,12 @@ Request API´s:
 
 ##Folder's
 
-![folder](https://user-images.githubusercontent.com/57687300/89144236-0a456080-d545-11ea-80e1-a7cb4b7fb2d7.png)
+![folder](https://user-images.githubusercontent.com/57687300/90557310-304c4100-e192-11ea-96b2-3e735fcb1a6f.png
 
 
 ## Namespaces 
 
-Acounts - There are the profiles and users of the systems.
+Accounts - There are the profiles and users of the systems.
 Students - It is separated to qualify the type of common user of the system.
 Templates - Everyone is organized regarding exams.
 Classes - is the group of students in the same class.
