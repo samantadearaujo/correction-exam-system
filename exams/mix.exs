@@ -20,6 +20,7 @@ defmodule Exams.MixProject do
   def application do
     [
       mod: {Exams.Application, []},
+      application: [:guardian],
       extra_applications: [:logger, :runtime_tools]
     ]
   end
