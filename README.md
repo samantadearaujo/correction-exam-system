@@ -64,7 +64,7 @@ Request API´s:
 
 ##Folder's
 
-![folder](https://user-images.githubusercontent.com/57687300/90557310-304c4100-e192-11ea-96b2-3e735fcb1a6f.png
+![folder](https://user-images.githubusercontent.com/57687300/90557310-304c4100-e192-11ea-96b2-3e735fcb1a6f.png)
 
 
 ## Namespaces 
