@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :exams, Exams.Repo,
   username: "postgres",
-  password: "master",
+  password: "rootw",
   database: "exams_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
