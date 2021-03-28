@@ -12,7 +12,8 @@ defmodule ExamsWeb.ExamTemplateController do
   end
 
   def create(conn, %{"exam_template" => exam_template_params}) do
-    with {:ok, %ExamTemplate{} = exam_template} <- Templates.create_exam_template(exam_template_params) do
+    with {:ok, %ExamTemplate{} = exam_template} <-
+           Templates.create_exam_template(exam_template_params) do
       conn
       |> put_status(:created)
       |> put_resp_header("location", Routes.exam_template_path(conn, :show, exam_template))
@@ -28,7 +29,8 @@ defmodule ExamsWeb.ExamTemplateController do
   def update(conn, %{"id" => id, "exam_template" => exam_template_params}) do
     exam_template = Templates.get_exam_template!(id)
 
-    with {:ok, %ExamTemplate{} = exam_template} <- Templates.update_exam_template(exam_template, exam_template_params) do
+    with {:ok, %ExamTemplate{} = exam_template} <-
+           Templates.update_exam_template(exam_template, exam_template_params) do
       render(conn, "show.json", exam_template: exam_template)
     end
   end

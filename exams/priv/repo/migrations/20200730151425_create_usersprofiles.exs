@@ -11,6 +11,5 @@ defmodule Exams.Repo.Migrations.CreateUsersprofiles do
 
       timestamps()
     end
-
   end
 end

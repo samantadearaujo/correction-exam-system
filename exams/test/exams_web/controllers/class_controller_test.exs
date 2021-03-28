@@ -24,7 +24,16 @@ defmodule ExamsWeb.ClassControllerTest do
     teacher_id: 43,
     year: 43
   }
-  @invalid_attrs %{academic: nil, created_by: nil, description: nil, id_exam: nil, modified_by: nil, name: nil, teacher_id: nil, year: nil}
+  @invalid_attrs %{
+    academic: nil,
+    created_by: nil,
+    description: nil,
+    id_exam: nil,
+    modified_by: nil,
+    name: nil,
+    teacher_id: nil,
+    year: nil
+  }
 
   def fixture(:class) do
     {:ok, class} = Classes.create_class(@create_attrs)

@@ -8,7 +8,7 @@ defmodule Exams.Accounts.User do
     field :password, :string, virtual: true
     field :profile, :integer
     field :username, :string
-    #has_one :profile, Exams.Accounts.UserProfile
+    # has_one :profile, Exams.Accounts.UserProfile
 
     timestamps()
   end
@@ -25,5 +25,4 @@ defmodule Exams.Accounts.User do
   defp put_pass_hash(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
     change(changeset, Argon2.add_hash(password))
   end
-
 end

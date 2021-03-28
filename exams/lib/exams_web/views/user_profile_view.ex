@@ -11,7 +11,6 @@ defmodule ExamsWeb.UserProfileView do
   end
 
   def render("user_profile.json", %{user_profile: user_profile}) do
-    %{id: user_profile.id,
-      name: user_profile.name}
+    %{id: user_profile.id, name: user_profile.name}
   end
 end

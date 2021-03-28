@@ -1,6 +1,7 @@
 defmodule Exams.Repo.Migrations.CreateExamsTemplatesQuestions do
   use Ecto.Migration
-    @moduledoc """
+
+  @moduledoc """
     Define apenas o Profile Teacher, pode criar perguntas. 
     São colocados as perguntas
   """
@@ -13,6 +14,5 @@ defmodule Exams.Repo.Migrations.CreateExamsTemplatesQuestions do
 
       timestamps()
     end
-
   end
 end

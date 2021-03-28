@@ -11,10 +11,12 @@ defmodule ExamsWeb.UserView do
   end
 
   def render("user.json", %{user: user}) do
-    %{id: user.id,
+    %{
+      id: user.id,
       name: user.name,
       username: user.username,
       password: user.password,
-      profile: user.profile}
+      profile: user.profile
+    }
   end
 end

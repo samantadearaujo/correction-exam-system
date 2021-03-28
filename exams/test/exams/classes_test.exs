@@ -6,9 +6,36 @@ defmodule Exams.ClassesTest do
   describe "class" do
     alias Exams.Classes.Class
 
-    @valid_attrs %{academic: 42, created_by: 42, description: "some description", id_exam: 42, modified_by: 42, name: "some name", teacher_id: 42, year: 42}
-    @update_attrs %{academic: 43, created_by: 43, description: "some updated description", id_exam: 43, modified_by: 43, name: "some updated name", teacher_id: 43, year: 43}
-    @invalid_attrs %{academic: nil, created_by: nil, description: nil, id_exam: nil, modified_by: nil, name: nil, teacher_id: nil, year: nil}
+    @valid_attrs %{
+      academic: 42,
+      created_by: 42,
+      description: "some description",
+      id_exam: 42,
+      modified_by: 42,
+      name: "some name",
+      teacher_id: 42,
+      year: 42
+    }
+    @update_attrs %{
+      academic: 43,
+      created_by: 43,
+      description: "some updated description",
+      id_exam: 43,
+      modified_by: 43,
+      name: "some updated name",
+      teacher_id: 43,
+      year: 43
+    }
+    @invalid_attrs %{
+      academic: nil,
+      created_by: nil,
+      description: nil,
+      id_exam: nil,
+      modified_by: nil,
+      name: nil,
+      teacher_id: nil,
+      year: nil
+    }
 
     def class_fixture(attrs \\ %{}) do
       {:ok, class} =

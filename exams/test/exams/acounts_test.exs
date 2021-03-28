@@ -40,13 +40,19 @@ defmodule Exams.AccountsTest do
 
     test "update_user_profile/2 with valid data updates the user_profile" do
       user_profile = user_profile_fixture()
-      assert {:ok, %UserProfile{} = user_profile} = Accounts.update_user_profile(user_profile, @update_attrs)
+
+      assert {:ok, %UserProfile{} = user_profile} =
+               Accounts.update_user_profile(user_profile, @update_attrs)
+
       assert user_profile.name == "some updated name"
     end
 
     test "update_user_profile/2 with invalid data returns error changeset" do
       user_profile = user_profile_fixture()
-      assert {:error, %Ecto.Changeset{}} = Accounts.update_user_profile(user_profile, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Accounts.update_user_profile(user_profile, @invalid_attrs)
+
       assert user_profile == Accounts.get_user_profile!(user_profile.id)
     end
 
@@ -65,8 +71,18 @@ defmodule Exams.AccountsTest do
   describe "users" do
     alias Exams.Accounts.User
 
-    @valid_attrs %{name: "some name", password: "some password", profile: 42, username: "some username"}
-    @update_attrs %{name: "some updated name", password: "some updated password", profile: 43, username: "some updated username"}
+    @valid_attrs %{
+      name: "some name",
+      password: "some password",
+      profile: 42,
+      username: "some username"
+    }
+    @update_attrs %{
+      name: "some updated name",
+      password: "some updated password",
+      profile: 43,
+      username: "some updated username"
+    }
     @invalid_attrs %{name: nil, password: nil, profile: nil, username: nil}
 
     def user_fixture(attrs \\ %{}) do

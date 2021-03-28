@@ -101,7 +101,10 @@ defmodule Exams.TemplatesTest do
 
     test "update_exam_template/2 with valid data updates the exam_template" do
       exam_template = exam_template_fixture()
-      assert {:ok, %ExamTemplate{} = exam_template} = Templates.update_exam_template(exam_template, @update_attrs)
+
+      assert {:ok, %ExamTemplate{} = exam_template} =
+               Templates.update_exam_template(exam_template, @update_attrs)
+
       assert exam_template.quarter == 43
       assert exam_template.teacher_id == 43
       assert exam_template.theme_id == 43
@@ -109,7 +112,10 @@ defmodule Exams.TemplatesTest do
 
     test "update_exam_template/2 with invalid data returns error changeset" do
       exam_template = exam_template_fixture()
-      assert {:error, %Ecto.Changeset{}} = Templates.update_exam_template(exam_template, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Templates.update_exam_template(exam_template, @invalid_attrs)
+
       assert exam_template == Templates.get_exam_template!(exam_template.id)
     end
 
@@ -148,11 +154,15 @@ defmodule Exams.TemplatesTest do
 
     test "get_exam_template_question!/1 returns the exam_template_question with given id" do
       exam_template_question = exam_template_question_fixture()
-      assert Templates.get_exam_template_question!(exam_template_question.id) == exam_template_question
+
+      assert Templates.get_exam_template_question!(exam_template_question.id) ==
+               exam_template_question
     end
 
     test "create_exam_template_question/1 with valid data creates a exam_template_question" do
-      assert {:ok, %ExamTemplateQuestion{} = exam_template_question} = Templates.create_exam_template_question(@valid_attrs)
+      assert {:ok, %ExamTemplateQuestion{} = exam_template_question} =
+               Templates.create_exam_template_question(@valid_attrs)
+
       assert exam_template_question.answer_correct_id == 42
       assert exam_template_question.questions == "some questions"
       assert exam_template_question.template_id == 42
@@ -164,7 +174,10 @@ defmodule Exams.TemplatesTest do
 
     test "update_exam_template_question/2 with valid data updates the exam_template_question" do
       exam_template_question = exam_template_question_fixture()
-      assert {:ok, %ExamTemplateQuestion{} = exam_template_question} = Templates.update_exam_template_question(exam_template_question, @update_attrs)
+
+      assert {:ok, %ExamTemplateQuestion{} = exam_template_question} =
+               Templates.update_exam_template_question(exam_template_question, @update_attrs)
+
       assert exam_template_question.answer_correct_id == 43
       assert exam_template_question.questions == "some updated questions"
       assert exam_template_question.template_id == 43
@@ -172,14 +185,23 @@ defmodule Exams.TemplatesTest do
 
     test "update_exam_template_question/2 with invalid data returns error changeset" do
       exam_template_question = exam_template_question_fixture()
-      assert {:error, %Ecto.Changeset{}} = Templates.update_exam_template_question(exam_template_question, @invalid_attrs)
-      assert exam_template_question == Templates.get_exam_template_question!(exam_template_question.id)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Templates.update_exam_template_question(exam_template_question, @invalid_attrs)
+
+      assert exam_template_question ==
+               Templates.get_exam_template_question!(exam_template_question.id)
     end
 
     test "delete_exam_template_question/1 deletes the exam_template_question" do
       exam_template_question = exam_template_question_fixture()
-      assert {:ok, %ExamTemplateQuestion{}} = Templates.delete_exam_template_question(exam_template_question)
-      assert_raise Ecto.NoResultsError, fn -> Templates.get_exam_template_question!(exam_template_question.id) end
+
+      assert {:ok, %ExamTemplateQuestion{}} =
+               Templates.delete_exam_template_question(exam_template_question)
+
+      assert_raise Ecto.NoResultsError, fn ->
+        Templates.get_exam_template_question!(exam_template_question.id)
+      end
     end
 
     test "change_exam_template_question/1 returns a exam_template_question changeset" do
@@ -215,7 +237,9 @@ defmodule Exams.TemplatesTest do
     end
 
     test "create_exam_template_answer/1 with valid data creates a exam_template_answer" do
-      assert {:ok, %ExamTemplateAnswer{} = exam_template_answer} = Templates.create_exam_template_answer(@valid_attrs)
+      assert {:ok, %ExamTemplateAnswer{} = exam_template_answer} =
+               Templates.create_exam_template_answer(@valid_attrs)
+
       assert exam_template_answer.answers == "some answers"
       assert exam_template_answer.question_id == 42
     end
@@ -226,21 +250,32 @@ defmodule Exams.TemplatesTest do
 
     test "update_exam_template_answer/2 with valid data updates the exam_template_answer" do
       exam_template_answer = exam_template_answer_fixture()
-      assert {:ok, %ExamTemplateAnswer{} = exam_template_answer} = Templates.update_exam_template_answer(exam_template_answer, @update_attrs)
+
+      assert {:ok, %ExamTemplateAnswer{} = exam_template_answer} =
+               Templates.update_exam_template_answer(exam_template_answer, @update_attrs)
+
       assert exam_template_answer.answers == "some updated answers"
       assert exam_template_answer.question_id == 43
     end
 
     test "update_exam_template_answer/2 with invalid data returns error changeset" do
       exam_template_answer = exam_template_answer_fixture()
-      assert {:error, %Ecto.Changeset{}} = Templates.update_exam_template_answer(exam_template_answer, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Templates.update_exam_template_answer(exam_template_answer, @invalid_attrs)
+
       assert exam_template_answer == Templates.get_exam_template_answer!(exam_template_answer.id)
     end
 
     test "delete_exam_template_answer/1 deletes the exam_template_answer" do
       exam_template_answer = exam_template_answer_fixture()
-      assert {:ok, %ExamTemplateAnswer{}} = Templates.delete_exam_template_answer(exam_template_answer)
-      assert_raise Ecto.NoResultsError, fn -> Templates.get_exam_template_answer!(exam_template_answer.id) end
+
+      assert {:ok, %ExamTemplateAnswer{}} =
+               Templates.delete_exam_template_answer(exam_template_answer)
+
+      assert_raise Ecto.NoResultsError, fn ->
+        Templates.get_exam_template_answer!(exam_template_answer.id)
+      end
     end
 
     test "change_exam_template_answer/1 returns a exam_template_answer changeset" do

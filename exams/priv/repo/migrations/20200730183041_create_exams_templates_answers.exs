@@ -1,8 +1,8 @@
 defmodule Exams.Repo.Migrations.CreateExamsTemplatesAnswers do
-     @moduledoc """
-     Define apenas o Profile Teacher, pode criar respostas. 
-     São colocados as respostas
-     """
+  @moduledoc """
+  Define apenas o Profile Teacher, pode criar respostas. 
+  São colocados as respostas
+  """
   use Ecto.Migration
 
   def change do
@@ -12,6 +12,5 @@ defmodule Exams.Repo.Migrations.CreateExamsTemplatesAnswers do
 
       timestamps()
     end
-
   end
 end

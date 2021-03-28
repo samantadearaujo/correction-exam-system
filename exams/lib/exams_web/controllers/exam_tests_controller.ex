@@ -28,7 +28,8 @@ defmodule ExamsWeb.ExamTestsController do
   def update(conn, %{"id" => id, "exam_tests" => exam_tests_params}) do
     exam_tests = ExamsTests.get_exam_tests!(id)
 
-    with {:ok, %ExamTests{} = exam_tests} <- ExamsTests.update_exam_tests(exam_tests, exam_tests_params) do
+    with {:ok, %ExamTests{} = exam_tests} <-
+           ExamsTests.update_exam_tests(exam_tests, exam_tests_params) do
       render(conn, "show.json", exam_tests: exam_tests)
     end
   end

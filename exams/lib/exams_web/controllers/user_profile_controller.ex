@@ -28,7 +28,8 @@ defmodule ExamsWeb.UserProfileController do
   def update(conn, %{"id" => id, "user_profile" => user_profile_params}) do
     user_profile = Accounts.get_user_profile!(id)
 
-    with {:ok, %UserProfile{} = user_profile} <- Accounts.update_user_profile(user_profile, user_profile_params) do
+    with {:ok, %UserProfile{} = user_profile} <-
+           Accounts.update_user_profile(user_profile, user_profile_params) do
       render(conn, "show.json", user_profile: user_profile)
     end
   end

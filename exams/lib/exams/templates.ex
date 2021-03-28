@@ -290,7 +290,10 @@ defmodule Exams.Templates do
       %Ecto.Changeset{data: %ExamTemplateQuestion{}}
 
   """
-  def change_exam_template_question(%ExamTemplateQuestion{} = exam_template_question, attrs \\ %{}) do
+  def change_exam_template_question(
+        %ExamTemplateQuestion{} = exam_template_question,
+        attrs \\ %{}
+      ) do
     ExamTemplateQuestion.changeset(exam_template_question, attrs)
   end
 

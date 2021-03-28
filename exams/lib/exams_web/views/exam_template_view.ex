@@ -11,9 +11,11 @@ defmodule ExamsWeb.ExamTemplateView do
   end
 
   def render("exam_template.json", %{exam_template: exam_template}) do
-    %{id: exam_template.id,
+    %{
+      id: exam_template.id,
       teacher_id: exam_template.teacher_id,
       theme_id: exam_template.theme_id,
-      quarter: exam_template.quarter}
+      quarter: exam_template.quarter
+    }
   end
 end

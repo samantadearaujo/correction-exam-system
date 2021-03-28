@@ -1,8 +1,8 @@
 defmodule Exams.Repo.Migrations.CreateStudents do
-     @moduledoc """
-     Define apenas o Profile Teacher, pode  Students. 
-     São colocados as classes, para associar os alunos e os exames
-     """
+  @moduledoc """
+  Define apenas o Profile Teacher, pode  Students. 
+  São colocados as classes, para associar os alunos e os exames
+  """
   use Ecto.Migration
 
   def change do
@@ -14,6 +14,5 @@ defmodule Exams.Repo.Migrations.CreateStudents do
 
       timestamps()
     end
-
   end
 end

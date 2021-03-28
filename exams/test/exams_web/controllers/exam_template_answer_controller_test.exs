@@ -32,7 +32,11 @@ defmodule ExamsWeb.ExamTemplateAnswerControllerTest do
 
   describe "create exam_template_answer" do
     test "renders exam_template_answer when data is valid", %{conn: conn} do
-      conn = post(conn, Routes.exam_template_answer_path(conn, :create), exam_template_answer: @create_attrs)
+      conn =
+        post(conn, Routes.exam_template_answer_path(conn, :create),
+          exam_template_answer: @create_attrs
+        )
+
       assert %{"id" => id} = json_response(conn, 201)["data"]
 
       conn = get(conn, Routes.exam_template_answer_path(conn, :show, id))
@@ -45,7 +49,11 @@ defmodule ExamsWeb.ExamTemplateAnswerControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
-      conn = post(conn, Routes.exam_template_answer_path(conn, :create), exam_template_answer: @invalid_attrs)
+      conn =
+        post(conn, Routes.exam_template_answer_path(conn, :create),
+          exam_template_answer: @invalid_attrs
+        )
+
       assert json_response(conn, 422)["errors"] != %{}
     end
   end
@@ -53,8 +61,15 @@ defmodule ExamsWeb.ExamTemplateAnswerControllerTest do
   describe "update exam_template_answer" do
     setup [:create_exam_template_answer]
 
-    test "renders exam_template_answer when data is valid", %{conn: conn, exam_template_answer: %ExamTemplateAnswer{id: id} = exam_template_answer} do
-      conn = put(conn, Routes.exam_template_answer_path(conn, :update, exam_template_answer), exam_template_answer: @update_attrs)
+    test "renders exam_template_answer when data is valid", %{
+      conn: conn,
+      exam_template_answer: %ExamTemplateAnswer{id: id} = exam_template_answer
+    } do
+      conn =
+        put(conn, Routes.exam_template_answer_path(conn, :update, exam_template_answer),
+          exam_template_answer: @update_attrs
+        )
+
       assert %{"id" => ^id} = json_response(conn, 200)["data"]
 
       conn = get(conn, Routes.exam_template_answer_path(conn, :show, id))
@@ -66,8 +81,15 @@ defmodule ExamsWeb.ExamTemplateAnswerControllerTest do
              } = json_response(conn, 200)["data"]
     end
 
-    test "renders errors when data is invalid", %{conn: conn, exam_template_answer: exam_template_answer} do
-      conn = put(conn, Routes.exam_template_answer_path(conn, :update, exam_template_answer), exam_template_answer: @invalid_attrs)
+    test "renders errors when data is invalid", %{
+      conn: conn,
+      exam_template_answer: exam_template_answer
+    } do
+      conn =
+        put(conn, Routes.exam_template_answer_path(conn, :update, exam_template_answer),
+          exam_template_answer: @invalid_attrs
+        )
+
       assert json_response(conn, 422)["errors"] != %{}
     end
   end
@@ -75,7 +97,10 @@ defmodule ExamsWeb.ExamTemplateAnswerControllerTest do
   describe "delete exam_template_answer" do
     setup [:create_exam_template_answer]
 
-    test "deletes chosen exam_template_answer", %{conn: conn, exam_template_answer: exam_template_answer} do
+    test "deletes chosen exam_template_answer", %{
+      conn: conn,
+      exam_template_answer: exam_template_answer
+    } do
       conn = delete(conn, Routes.exam_template_answer_path(conn, :delete, exam_template_answer))
       assert response(conn, 204)
 

@@ -12,7 +12,8 @@ defmodule ExamsWeb.ExamStudentController do
   end
 
   def create(conn, %{"exam_student" => exam_student_params}) do
-    with {:ok, %ExamStudent{} = exam_student} <- ExamsTests.create_exam_student(exam_student_params) do
+    with {:ok, %ExamStudent{} = exam_student} <-
+           ExamsTests.create_exam_student(exam_student_params) do
       conn
       |> put_status(:created)
       |> put_resp_header("location", Routes.exam_student_path(conn, :show, exam_student))
@@ -28,7 +29,8 @@ defmodule ExamsWeb.ExamStudentController do
   def update(conn, %{"id" => id, "exam_student" => exam_student_params}) do
     exam_student = ExamsTests.get_exam_student!(id)
 
-    with {:ok, %ExamStudent{} = exam_student} <- ExamsTests.update_exam_student(exam_student, exam_student_params) do
+    with {:ok, %ExamStudent{} = exam_student} <-
+           ExamsTests.update_exam_student(exam_student, exam_student_params) do
       render(conn, "show.json", exam_student: exam_student)
     end
   end

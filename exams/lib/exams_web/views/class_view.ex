@@ -11,7 +11,8 @@ defmodule ExamsWeb.ClassView do
   end
 
   def render("class.json", %{class: class}) do
-    %{id: class.id,
+    %{
+      id: class.id,
       teacher_id: class.teacher_id,
       year: class.year,
       academic: class.academic,
@@ -19,6 +20,7 @@ defmodule ExamsWeb.ClassView do
       description: class.description,
       created_by: class.created_by,
       modified_by: class.modified_by,
-      id_exam: class.id_exam}
+      id_exam: class.id_exam
+    }
   end
 end

@@ -11,7 +11,6 @@ defmodule ExamsWeb.ThemeView do
   end
 
   def render("theme.json", %{theme: theme}) do
-    %{id: theme.id,
-      name: theme.name}
+    %{id: theme.id, name: theme.name}
   end
 end

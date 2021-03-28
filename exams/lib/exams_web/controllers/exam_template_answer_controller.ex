@@ -12,10 +12,14 @@ defmodule ExamsWeb.ExamTemplateAnswerController do
   end
 
   def create(conn, %{"exam_template_answer" => exam_template_answer_params}) do
-    with {:ok, %ExamTemplateAnswer{} = exam_template_answer} <- Templates.create_exam_template_answer(exam_template_answer_params) do
+    with {:ok, %ExamTemplateAnswer{} = exam_template_answer} <-
+           Templates.create_exam_template_answer(exam_template_answer_params) do
       conn
       |> put_status(:created)
-      |> put_resp_header("location", Routes.exam_template_answer_path(conn, :show, exam_template_answer))
+      |> put_resp_header(
+        "location",
+        Routes.exam_template_answer_path(conn, :show, exam_template_answer)
+      )
       |> render("show.json", exam_template_answer: exam_template_answer)
     end
   end
@@ -28,7 +32,11 @@ defmodule ExamsWeb.ExamTemplateAnswerController do
   def update(conn, %{"id" => id, "exam_template_answer" => exam_template_answer_params}) do
     exam_template_answer = Templates.get_exam_template_answer!(id)
 
-    with {:ok, %ExamTemplateAnswer{} = exam_template_answer} <- Templates.update_exam_template_answer(exam_template_answer, exam_template_answer_params) do
+    with {:ok, %ExamTemplateAnswer{} = exam_template_answer} <-
+           Templates.update_exam_template_answer(
+             exam_template_answer,
+             exam_template_answer_params
+           ) do
       render(conn, "show.json", exam_template_answer: exam_template_answer)
     end
   end
@@ -36,7 +44,8 @@ defmodule ExamsWeb.ExamTemplateAnswerController do
   def delete(conn, %{"id" => id}) do
     exam_template_answer = Templates.get_exam_template_answer!(id)
 
-    with {:ok, %ExamTemplateAnswer{}} <- Templates.delete_exam_template_answer(exam_template_answer) do
+    with {:ok, %ExamTemplateAnswer{}} <-
+           Templates.delete_exam_template_answer(exam_template_answer) do
       send_resp(conn, :no_content, "")
     end
   end

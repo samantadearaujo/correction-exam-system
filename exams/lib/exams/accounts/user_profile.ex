@@ -4,7 +4,7 @@ defmodule Exams.Accounts.UserProfile do
 
   schema "usersprofiles" do
     field :name, :string
-   
+
     timestamps()
   end
 

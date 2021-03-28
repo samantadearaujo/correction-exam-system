@@ -7,7 +7,12 @@ defmodule Exams.ExamsTestsTest do
     alias Exams.ExamsTests.ExamTests
 
     @valid_attrs %{name: "some name", score_exam: "120.5", template_id: 42, total_question: 42}
-    @update_attrs %{name: "some updated name", score_exam: "456.7", template_id: 43, total_question: 43}
+    @update_attrs %{
+      name: "some updated name",
+      score_exam: "456.7",
+      template_id: 43,
+      total_question: 43
+    }
     @invalid_attrs %{name: nil, score_exam: nil, template_id: nil, total_question: nil}
 
     def exam_tests_fixture(attrs \\ %{}) do
@@ -43,7 +48,10 @@ defmodule Exams.ExamsTestsTest do
 
     test "update_exam_tests/2 with valid data updates the exam_tests" do
       exam_tests = exam_tests_fixture()
-      assert {:ok, %ExamTests{} = exam_tests} = ExamsTests.update_exam_tests(exam_tests, @update_attrs)
+
+      assert {:ok, %ExamTests{} = exam_tests} =
+               ExamsTests.update_exam_tests(exam_tests, @update_attrs)
+
       assert exam_tests.name == "some updated name"
       assert exam_tests.score_exam == Decimal.new("456.7")
       assert exam_tests.template_id == 43
@@ -52,7 +60,10 @@ defmodule Exams.ExamsTestsTest do
 
     test "update_exam_tests/2 with invalid data returns error changeset" do
       exam_tests = exam_tests_fixture()
-      assert {:error, %Ecto.Changeset{}} = ExamsTests.update_exam_tests(exam_tests, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               ExamsTests.update_exam_tests(exam_tests, @invalid_attrs)
+
       assert exam_tests == ExamsTests.get_exam_tests!(exam_tests.id)
     end
 
@@ -71,8 +82,18 @@ defmodule Exams.ExamsTestsTest do
   describe "examstudent" do
     alias Exams.ExamsTests.ExamStudent
 
-    @valid_attrs %{answer_student: "some answer_student", exam_id: 42, question_student: "some question_student", student_id: 42}
-    @update_attrs %{answer_student: "some updated answer_student", exam_id: 43, question_student: "some updated question_student", student_id: 43}
+    @valid_attrs %{
+      answer_student: "some answer_student",
+      exam_id: 42,
+      question_student: "some question_student",
+      student_id: 42
+    }
+    @update_attrs %{
+      answer_student: "some updated answer_student",
+      exam_id: 43,
+      question_student: "some updated question_student",
+      student_id: 43
+    }
     @invalid_attrs %{answer_student: nil, exam_id: nil, question_student: nil, student_id: nil}
 
     def exam_student_fixture(attrs \\ %{}) do
@@ -108,7 +129,10 @@ defmodule Exams.ExamsTestsTest do
 
     test "update_exam_student/2 with valid data updates the exam_student" do
       exam_student = exam_student_fixture()
-      assert {:ok, %ExamStudent{} = exam_student} = ExamsTests.update_exam_student(exam_student, @update_attrs)
+
+      assert {:ok, %ExamStudent{} = exam_student} =
+               ExamsTests.update_exam_student(exam_student, @update_attrs)
+
       assert exam_student.answer_student == "some updated answer_student"
       assert exam_student.exam_id == 43
       assert exam_student.question_student == "some updated question_student"
@@ -117,7 +141,10 @@ defmodule Exams.ExamsTestsTest do
 
     test "update_exam_student/2 with invalid data returns error changeset" do
       exam_student = exam_student_fixture()
-      assert {:error, %Ecto.Changeset{}} = ExamsTests.update_exam_student(exam_student, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               ExamsTests.update_exam_student(exam_student, @invalid_attrs)
+
       assert exam_student == ExamsTests.get_exam_student!(exam_student.id)
     end
 

@@ -10,6 +10,5 @@ defmodule Exams.Repo.Migrations.CreateThemes do
 
       timestamps()
     end
-
   end
 end

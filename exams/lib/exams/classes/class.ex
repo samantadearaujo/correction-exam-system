@@ -18,7 +18,25 @@ defmodule Exams.Classes.Class do
   @doc false
   def changeset(class, attrs) do
     class
-    |> cast(attrs, [:teacher_id, :year, :academic, :name, :description, :created_by, :modified_by, :id_exam])
-    |> validate_required([:teacher_id, :year, :academic, :name, :description, :created_by, :modified_by, :id_exam])
+    |> cast(attrs, [
+      :teacher_id,
+      :year,
+      :academic,
+      :name,
+      :description,
+      :created_by,
+      :modified_by,
+      :id_exam
+    ])
+    |> validate_required([
+      :teacher_id,
+      :year,
+      :academic,
+      :name,
+      :description,
+      :created_by,
+      :modified_by,
+      :id_exam
+    ])
   end
 end
